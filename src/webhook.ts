@@ -13,12 +13,48 @@ let opts: {
 
 //Creating webhook
 async function createWebHook(repo: string, owner:string, desc: string, events: string[], url: string) {
-
+    const options = {
+        method: "POST",
+        uri:
+        "https://api.bitbucket.org/2.0/repositories/" + owner+"/"+ repo + "/hooks",
+        auth: {
+            user: opts.username,
+            pass: opts.password,
+        },
+        body: {
+            "description": desc,
+            "url": url,
+            "active": true,
+            "events": events
+        },
+        json: true, // Automatically stringifies the body to JSON
+    };
+    try {
+        await requestPromise(options);
+        console.log("optiions", options);
+    } catch (err) {
+      throw err;
+    }
 }
 
 //Deleting webhook
 async function deleteWebHook(repo: string, uid: string,owner: string) {
-
+    const options = {
+        method: "DELETE",
+        uri:
+        "https://api.bitbucket.org/2.0/repositories/" + owner + "/" + repo + "/hooks/" + uid,
+        auth: {
+            user: opts.username,
+            pass: opts.password,
+        },
+        json: true, // Automatically stringifies the body to JSON
+    };
+    try {
+        await requestPromise(options);
+        console.log('optiions', options);
+    } catch (err) {
+      throw err;
+    }
 }
 
 //Getting repo list
