@@ -1,28 +1,33 @@
 {
-  "name": "webhook-update",
-  "version": "0.0.1",
-  "description": "updated the webhook",
+  "name": "Bitbucekt Assistance",
+  "description": "This project use to update json data of aws cloudformation",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/src/test-pipe",
     "dev": "tsc -p tsconfig.src.json"
   },
+  "typeCoverage": {
+    "atLeast": 90
+  },
   "keywords": [
     "bitbucket",
     "webhook"
   ],
   "repository": "",
-  "author": "manshu sharma",
+  "author": "Manshu Sharma",
   "license": "Private",
   "dependencies": {
+    "command-line-args": "5.1.1",
+    "jsonfile": "6.1.0",
     "request": "^2.59.0",
     "request-promise-native": "^1.0.7",
     "shelljs": "0.8.3",
     "shelljs.exec": "1.1.8",
-    "command-line-args": "5.1.1"
+    "tslint": "^6.1.3"
   },
   "devDependencies": {
-    "@types/node": "^14.14.22"
+    "@types/node": "^14.14.35",
+    "typescript-coverage-report": "^0.5.0"
   }
 }
