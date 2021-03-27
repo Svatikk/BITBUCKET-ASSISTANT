@@ -1,0 +1,1 @@
+In here we add groovy scripts which we wnat to add in every repos.
