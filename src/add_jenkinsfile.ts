@@ -20,9 +20,9 @@ export async function addJenkinsFiles(workspace: string, repo: string, branch: s
                 await assistance.copyFileToRepo("./" + repo + "/serverless.yml", file.JenkinsDeploy_ec2_file, "./" + repo, true);
             }
             if (branch === new_branch){
-                await assistance.gitPush(workspace, repo, "TOOL-49 Initial commit",branch);
+                await assistance.gitPush(workspace, repo, "Initial commit",branch);
             }else if (branch !== new_branch){
-                await assistance.gitPush(workspace, repo, "TOOL-49 Initial commit",new_branch);
+                await assistance.gitPush(workspace, repo, "Initial commit",new_branch);
             }
         }
     } catch (err) {
